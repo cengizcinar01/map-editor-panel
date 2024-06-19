@@ -4,7 +4,7 @@ const SignIn = () => {
   const { signIn, isAuthenticated } = useLogto();
 
   if (isAuthenticated) {
-    return <div>Signed in</div>;
+    return null;
   }
 
   return (
