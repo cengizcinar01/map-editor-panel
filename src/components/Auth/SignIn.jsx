@@ -9,7 +9,9 @@ const SignIn = () => {
 
   return (
     <button
-      onClick={() => signIn(`${import.meta.env.VITE_LOGTO_REDIRECT_URL}`)}
+      onClick={() =>
+        signIn(`${import.meta.env.VITE_LOGTO_REDIRECT_URL}/callback`)
+      }
     >
       Sign In
     </button>
