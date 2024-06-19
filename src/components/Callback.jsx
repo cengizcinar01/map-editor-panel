@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const Callback = () => {
   const navigate = useNavigate();
-  
+
   const { isLoading } = useHandleSignInCallback(() => {
     navigate("/");
   });
