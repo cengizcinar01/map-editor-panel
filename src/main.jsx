@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import RootLayout from "./RootLayout";
+import "./styles/main.css";
 
 const config = {
   endpoint: `${import.meta.env.VITE_LOGTO_API_ENDPOINT}`,
