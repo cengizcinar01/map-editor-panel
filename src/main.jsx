@@ -1,7 +1,7 @@
 import { LogtoProvider } from "@logto/react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Callback from "./components/Callback";
+import Callback from "./components/Auth/Callback";
 import AddStyle from "./pages/AddStyle/AddStyle";
 import Home from "./pages/Home/Home";
 import RootLayout from "./RootLayout";

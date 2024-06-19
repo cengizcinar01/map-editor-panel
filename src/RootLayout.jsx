@@ -1,15 +1,13 @@
-import { useLogto } from "@logto/react";
 import { Outlet } from "react-router-dom";
-import SignIn from "./components/SignIn";
-import SignOut from "./components/SignOut";
+import SignIn from "./components/Auth/SignIn";
+import SignOut from "./components/Auth/SignOut";
 
 const RootLayout = () => {
-  const { isAuthenticated } = useLogto();
   return (
     <>
-      {isAuthenticated && <Outlet />}
-      {isAuthenticated && <SignOut />}
+      <Outlet />
       <SignIn />
+      <SignOut />
     </>
   );
 };
