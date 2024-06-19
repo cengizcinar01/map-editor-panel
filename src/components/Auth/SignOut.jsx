@@ -7,7 +7,7 @@ const SignOut = () => {
   return (
     <button
       className={styles["sign-out-button"]}
-      onClick={() => signOut("http://localhost:3001")}
+      onClick={() => signOut(`${import.meta.env.VITE_LOGTO_REDIRECT_URL}`)}
     >
       Sign out
     </button>

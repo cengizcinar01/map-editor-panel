@@ -8,7 +8,9 @@ const SignIn = () => {
   }
 
   return (
-    <button onClick={() => signIn("http://localhost:3001/callback")}>
+    <button
+      onClick={() => signIn(`${import.meta.env.VITE_LOGTO_REDIRECT_URL}`)}
+    >
       Sign In
     </button>
   );
