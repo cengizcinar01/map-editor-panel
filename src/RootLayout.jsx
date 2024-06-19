@@ -1,22 +1,11 @@
-import { useLogto } from "@logto/react";
 import { Outlet } from "react-router-dom";
+import SignIn from "./components/SignIn";
 
 const RootLayout = () => {
-  const { signIn, isAuthenticated } = useLogto();
-
-  if (isAuthenticated) {
-    return (
-      <>
-        <Outlet />
-      </>
-    );
-  }
-
   return (
     <>
-      <button onClick={() => signIn("http://localhost:3001/callback")}>
-        Sign In
-      </button>
+      <Outlet />
+      <SignIn />
     </>
   );
 };

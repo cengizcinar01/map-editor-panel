@@ -1,6 +1,7 @@
 import { LogtoProvider } from "@logto/react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Callback from "./components/Callback";
 import AddStyle from "./pages/AddStyle/AddStyle";
 import Home from "./pages/Home/Home";
 import RootLayout from "./RootLayout";
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { index: true, element: <Home /> },
+      {
+        path: "callback",
+        element: <Callback />,
+      },
       {
         path: "add-style",
         element: <AddStyle />,
