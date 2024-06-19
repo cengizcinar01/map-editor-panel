@@ -1,10 +1,16 @@
 import { useLogto } from "@logto/react";
+import styles from "./styles/SignOut.module.css";
 
 const SignOut = () => {
   const { signOut } = useLogto();
 
   return (
-    <button onClick={() => signOut("http://localhost:3001")}>Sign out</button>
+    <button
+      className={styles["sign-out-button"]}
+      onClick={() => signOut("http://localhost:3001")}
+    >
+      Sign out
+    </button>
   );
 };
 
