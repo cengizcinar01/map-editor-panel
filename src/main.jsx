@@ -1,9 +1,9 @@
 import { LogtoProvider } from "@logto/react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AddStyle from "./pages/AddStyle/AddStyle";
 import Home from "./pages/Home/Home";
 import RootLayout from "./RootLayout";
-import "./styles/main.css";
 
 const config = {
   endpoint: `${import.meta.env.VITE_LOGTO_API_ENDPOINT}`,
@@ -14,7 +14,13 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
-    children: [{ index: true, element: <Home /> }],
+    children: [
+      { index: true, element: <Home /> },
+      {
+        path: "add-style",
+        element: <AddStyle />,
+      },
+    ],
   },
 ]);
 
