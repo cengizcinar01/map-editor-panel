@@ -1,14 +1,14 @@
 import { useLogto } from "@logto/react";
 
-const Home = () => {
+const Dashboard = () => {
   const { isAuthenticated } = useLogto();
 
   if (isAuthenticated) {
     return (
       <>
-        <div>Home</div>
+        <div>Dashboard</div>
       </>
     );
   }
 };
-export default Home;
+export default Dashboard;

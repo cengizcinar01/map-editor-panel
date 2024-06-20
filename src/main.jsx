@@ -3,16 +3,16 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Callback from "./components/Auth/Callback";
 import AddStyle from "./pages/AddStyle/AddStyle";
-import Home from "./pages/Home/Home";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import RootLayout from "./RootLayout";
 import "./styles/main.css";
 
 const router = createBrowserRouter([
-  {
+  { 
     path: "/",
     element: <RootLayout />,
     children: [
-      { index: true, element: <Home /> },
+      { index: true, element: <Dashboard /> },
       {
         path: "callback",
         element: <Callback />,
