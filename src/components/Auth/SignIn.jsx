@@ -2,7 +2,11 @@ import { useLogto } from "@logto/react";
 import styles from "./styles/SignIn.module.css";
 
 const SignIn = () => {
-  const { signIn, isAuthenticated } = useLogto();
+  const { signIn, isAuthenticated, isLoading } = useLogto();
+
+  if (isLoading) {
+    return null;
+  }
 
   if (isAuthenticated) {
     return null;
