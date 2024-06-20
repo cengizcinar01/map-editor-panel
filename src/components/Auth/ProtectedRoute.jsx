@@ -1,15 +1,9 @@
 import { useLogto } from "@logto/react";
-import { useEffect } from "react";
 import RootLayout from "../../RootLayout";
+import SignIn from "./SignIn";
 
 const ProtectedRoute = () => {
-  const { isAuthenticated, isLoading, signIn } = useLogto();
-
-  useEffect(() => {
-    if (!isAuthenticated && !isLoading) {
-      void signIn(`${import.meta.env.VITE_LOGTO_REDIRECT_URL}/callback`);
-    }
-  }, [isAuthenticated, isLoading, signIn]);
+  const { isAuthenticated } = useLogto();
 
   if (isAuthenticated) {
     return (
@@ -18,6 +12,8 @@ const ProtectedRoute = () => {
       </>
     );
   }
+
+  return <SignIn />;
 };
 
 export default ProtectedRoute;
