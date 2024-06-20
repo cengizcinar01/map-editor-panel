@@ -24,3 +24,7 @@
     cursor: pointer;
     box-shadow: 2px 2px 1px 1px rgb(180, 180, 180);
 }
+
+.logo {
+    width: 400px;
+}
