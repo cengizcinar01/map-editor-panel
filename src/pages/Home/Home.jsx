@@ -4,7 +4,11 @@ const Home = () => {
   const { isAuthenticated } = useLogto();
 
   if (isAuthenticated) {
-    return <>Home</>;
+    return (
+      <>
+        <div>Home</div>
+      </>
+    );
   }
 };
 export default Home;

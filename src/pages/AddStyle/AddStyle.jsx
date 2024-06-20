@@ -4,7 +4,11 @@ const AddStyle = () => {
   const { isAuthenticated } = useLogto();
 
   if (isAuthenticated) {
-    return <>AddStyle</>;
+    return (
+      <>
+        <div>AddStyle</div>
+      </>
+    );
   }
 };
 export default AddStyle;
