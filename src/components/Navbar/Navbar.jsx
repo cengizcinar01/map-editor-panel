@@ -32,15 +32,13 @@ const Navbar = () => {
     fetchProducts();
   }, [isAuthenticated, getAccessToken]);
 
-  if (isAuthenticated) {
-    return (
-      <>
-        <div className={styles["navbar-container"]}>
-          <SignOut />
-        </div>
-      </>
-    );
-  }
+  return (
+    <>
+      <div className={styles["navbar-container"]}>
+        <SignOut />
+      </div>
+    </>
+  );
 };
 
 export default Navbar;
