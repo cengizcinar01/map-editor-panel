@@ -1,5 +1,5 @@
 import { useLogto } from "@logto/react";
-import styles from "./styles/Sidebar.module.css";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const { isAuthenticated } = useLogto();
@@ -7,7 +7,14 @@ const Sidebar = () => {
   if (isAuthenticated) {
     return (
       <>
-        <div className={styles["sidebar-container"]}></div>
+        <ul>
+          <li>
+            <NavLink to="/">Dashboard</NavLink>
+          </li>
+          <li>
+            <NavLink to="/add-style">Add Style</NavLink>
+          </li>
+        </ul>
       </>
     );
   }

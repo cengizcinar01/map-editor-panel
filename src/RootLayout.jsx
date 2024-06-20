@@ -9,8 +9,12 @@ const RootLayout = () => {
     <>
       <Navbar />
       <div className={styles["main-container"]}>
-        <Sidebar />
-        <Outlet />
+        <div className={styles["sidebar-container"]}>
+          <Sidebar />
+        </div>
+        <div className={styles["outlet-container"]}>
+          <Outlet />
+        </div>
       </div>
       <SignIn />
     </>
