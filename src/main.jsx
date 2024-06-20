@@ -7,11 +7,6 @@ import Home from "./pages/Home/Home";
 import RootLayout from "./RootLayout";
 import "./styles/main.css";
 
-const config = {
-  endpoint: `${import.meta.env.VITE_LOGTO_API_ENDPOINT}`,
-  appId: `${import.meta.env.VITE_LOGTO_APP_ID}`,
-};
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,7 +26,14 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <LogtoProvider config={config}>
+  <LogtoProvider
+    config={{
+      endpoint: [`${import.meta.env.VITE_LOGTO_API_ENDPOINT}`],
+      appId: [`${import.meta.env.VITE_LOGTO_APP_ID}`],
+      resources: [`${import.meta.env.VITE_LOGTO_RESOURCES}`],
+      scopes: import.meta.env.VITE_LOGTO_SCOPES.split(","),
+    }}
+  >
     <RouterProvider router={router} />
   </LogtoProvider>
 );

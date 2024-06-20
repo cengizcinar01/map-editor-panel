@@ -9,7 +9,11 @@ const Callback = () => {
   });
 
   if (isLoading) {
-    return <div>Redirecting...</div>;
+    return (
+      <>
+        <div>Redirecting...</div>
+      </>
+    );
   }
   return null;
 };
