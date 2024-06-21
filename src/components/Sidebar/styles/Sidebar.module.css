@@ -1,6 +1,7 @@
 .sidebar-menu li a {
     display: flex;
-    padding: 15px;
-    margin: 0 0 3px 0;
+    padding: 8px 12px;
+    margin: 8px 12px;
     background-color: rgb(210, 210, 210);
+    font-size: 14px;
 }
