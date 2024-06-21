@@ -2,26 +2,23 @@ import { LogtoProvider } from "@logto/react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Callback from "./components/Auth/Callback";
+import ProtectedRoute from "./components/Auth/ProtectedRoute";
 import AddStyle from "./pages/AddStyle/AddStyle";
-import Home from "./pages/Home/Home";
-import RootLayout from "./RootLayout";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import "./styles/main.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <RootLayout />,
+    element: <ProtectedRoute />,
     children: [
-      { index: true, element: <Home /> },
-      {
-        path: "callback",
-        element: <Callback />,
-      },
-      {
-        path: "add-style",
-        element: <AddStyle />,
-      },
+      { index: true, element: <Dashboard /> },
+      { path: "add-style", element: <AddStyle /> },
     ],
+  },
+  {
+    path: "/callback",
+    element: <Callback />,
   },
 ]);
 

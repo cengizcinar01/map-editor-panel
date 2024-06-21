@@ -2,6 +2,7 @@ import { useLogto } from "@logto/react";
 import axios from "axios";
 import { useEffect } from "react";
 import SignOut from "../Auth/SignOut";
+import UserProfile from "../User/UserProfile";
 import styles from "./styles/Navbar.module.css";
 
 const Navbar = () => {
@@ -32,15 +33,18 @@ const Navbar = () => {
     fetchProducts();
   }, [isAuthenticated, getAccessToken]);
 
-  if (isAuthenticated) {
-    return (
-      <>
-        <div className={styles["navbar-container"]}>
+  return (
+    <>
+      <div className={styles["navbar-container"]}>
+        <div className={styles["navbar-left"]}>
+          <UserProfile />
+        </div>
+        <div className={styles["navbar-right"]}>
           <SignOut />
         </div>
-      </>
-    );
-  }
+      </div>
+    </>
+  );
 };
 
 export default Navbar;

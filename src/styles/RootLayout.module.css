@@ -1,0 +1,19 @@
+.main-container {
+    display: flex;
+    height: 90vh;
+}
+
+.sidebar-container {
+    margin: 20px;
+    width: 300px;
+    background-color: rgb(230, 230, 230);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.outlet-container {
+    flex: 1;
+    margin: 20px;
+    background-color: rgb(230, 230, 230);
+}

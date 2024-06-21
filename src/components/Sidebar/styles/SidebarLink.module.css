@@ -1,0 +1,12 @@
+.navlink {
+    display: block;
+    padding: 10px;
+    background-color: rgb(220, 220, 220);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.active {
+    background-color: rgb(210, 210, 210);
+    color: rgb(0, 0, 0);
+}
