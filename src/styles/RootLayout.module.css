@@ -3,14 +3,15 @@
 }
 
 .sidebar-container {
-    height: 300px;
     margin: 30px;
     width: 300px;
     background-color: rgb(230, 230, 230);
+    padding: 10px;
 }
 
 .outlet-container {
     width: 100%;
+    height: 500px;
     margin: 30px;
     background-color: rgb(230, 230, 230);
 }
