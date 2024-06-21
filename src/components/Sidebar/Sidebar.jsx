@@ -1,25 +1,14 @@
-import { NavLink } from "react-router-dom";
-import styles from "./styles/Sidebar.module.css";
+import SidebarLink from "./SidebarLink";
 
 const Sidebar = () => {
   return (
     <>
-      <ul className={styles["sidebar-menu"]}>
+      <ul>
         <li>
-          <NavLink
-            to="/"
-            className={({ isActive }) => (isActive ? styles.active : "")}
-          >
-            Dashboard
-          </NavLink>
+          <SidebarLink to="/">Dashboard</SidebarLink>
         </li>
         <li>
-          <NavLink
-            to="/add-style"
-            className={({ isActive }) => (isActive ? styles.active : "")}
-          >
-            Add Style
-          </NavLink>
+          <SidebarLink to="/add-style">Add Style</SidebarLink>
         </li>
       </ul>
     </>

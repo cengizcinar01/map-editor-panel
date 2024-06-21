@@ -1,4 +1,4 @@
-.sidebar-menu li a {
+.navlink {
     display: flex;
     padding: 8px 12px;
     margin: 8px 12px;
@@ -6,7 +6,7 @@
     font-size: 14px;
 }
 
-.sidebar-menu li a.active {
+.active {
     background-color: rgb(210, 210, 210);
     color: rgb(0, 0, 0);
 }
