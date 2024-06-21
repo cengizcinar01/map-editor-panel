@@ -1,0 +1,6 @@
+.sidebar-menu li a {
+    display: flex;
+    padding: 15px;
+    margin: 0 0 3px 0;
+    background-color: rgb(210, 210, 210);
+}

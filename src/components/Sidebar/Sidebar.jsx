@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
+import styles from "./styles/Sidebar.module.css";
 
 const Sidebar = () => {
   return (
     <>
-      <ul>
+      <ul className={styles["sidebar-menu"]}>
         <li>
           <NavLink to="/">Dashboard</NavLink>
         </li>
