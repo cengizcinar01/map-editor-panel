@@ -6,10 +6,20 @@ const Sidebar = () => {
     <>
       <ul className={styles["sidebar-menu"]}>
         <li>
-          <NavLink to="/">Dashboard</NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? styles.active : "")}
+          >
+            Dashboard
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/add-style">Add Style</NavLink>
+          <NavLink
+            to="/add-style"
+            className={({ isActive }) => (isActive ? styles.active : "")}
+          >
+            Add Style
+          </NavLink>
         </li>
       </ul>
     </>

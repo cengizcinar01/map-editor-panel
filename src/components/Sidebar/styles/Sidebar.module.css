@@ -5,3 +5,8 @@
     background-color: rgb(220, 220, 220);
     font-size: 14px;
 }
+
+.sidebar-menu li a.active {
+    background-color: rgb(210, 210, 210);
+    color: rgb(0, 0, 0);
+}
