@@ -6,11 +6,7 @@ const ProtectedRoute = () => {
   const { isAuthenticated } = useLogto();
 
   if (isAuthenticated) {
-    return (
-      <>
-        <RootLayout />
-      </>
-    );
+    return <RootLayout />;
   }
 
   return <SignIn />;
