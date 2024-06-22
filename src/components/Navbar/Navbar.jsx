@@ -9,28 +9,28 @@ const Navbar = () => {
   const { getAccessToken, isAuthenticated } = useLogto();
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchProtected = async () => {
       if (isAuthenticated) {
         const accessToken = await getAccessToken(
           `${import.meta.env.VITE_LOGTO_RESOURCES}`
         );
         try {
           const response = await axios.get(
-            `${import.meta.env.VITE_LOGTO_RESOURCES}/products`,
+            `${import.meta.env.VITE_LOGTO_RESOURCES}/protected`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
               },
             }
           );
-          console.log("Products:", response.data);
+          console.log(response.data);
         } catch (error) {
-          console.error("Error fetching products:", error);
+          console.error("Error fetching: ", error);
         }
       }
     };
 
-    fetchProducts();
+    fetchProtected();
   }, [isAuthenticated, getAccessToken]);
 
   return (
