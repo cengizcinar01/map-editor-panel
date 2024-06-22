@@ -1,10 +1,15 @@
+import { MdDashboard, MdDesignServices } from "react-icons/md";
 import SidebarLink from "./SidebarLink";
 
 const Sidebar = () => {
   return (
     <>
-      <SidebarLink to="/">Dashboard</SidebarLink>
-      <SidebarLink to="/add-style">Add Style</SidebarLink>
+      <SidebarLink icon={MdDashboard} to="/">
+        Dashboard
+      </SidebarLink>
+      <SidebarLink icon={MdDesignServices} to="/add-style">
+        Add Style
+      </SidebarLink>
     </>
   );
 };
