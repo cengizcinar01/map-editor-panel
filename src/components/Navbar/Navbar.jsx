@@ -14,9 +14,10 @@ const Navbar = () => {
         const accessToken = await getAccessToken(
           `${import.meta.env.VITE_LOGTO_RESOURCES}`
         );
+        console.log(accessToken);
         try {
           const response = await axios.get(
-            `${import.meta.env.VITE_LOGTO_RESOURCES}/protected`,
+            `${import.meta.env.VITE_LOGTO_RESOURCES}/auth/admin-auth-info`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
