@@ -1,0 +1,11 @@
+.style-list-container {
+    padding: 30px;
+    background-color: rgb(210, 210, 210);
+    margin: 30px;
+}
+
+.style-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
