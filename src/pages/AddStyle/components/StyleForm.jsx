@@ -1,6 +1,8 @@
 import { useLogto } from "@logto/react";
 import axios from "axios";
+import classNames from "classnames";
 import { useForm } from "react-hook-form";
+import styles from "./styles/StyleForm.module.css";
 
 const StyleForm = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -34,24 +36,37 @@ const StyleForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input
-        type="text"
-        placeholder="Style Name"
-        {...register("styleName", { required: true })}
-      />
-      <input
-        type="text"
-        placeholder="Style URL"
-        {...register("styleUrl", { required: true })}
-      />
-      <input
-        type="file"
-        accept="image/*"
-        {...register("styleImg", { required: true })}
-      />
-      <button type="submit">Add Style</button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles["form"]}>
+        <div className={styles["form-group"]}>
+          <input
+            type="text"
+            placeholder="Style name"
+            className={styles["input"]}
+            {...register("styleName", { required: true })}
+          />
+        </div>
+        <div className={styles["form-group"]}>
+          <input
+            type="text"
+            placeholder="Style URL"
+            className={classNames(styles["input"], styles["url"])}
+            {...register("styleUrl", { required: true })}
+          />
+        </div>
+        <div className={styles["form-group"]}>
+          <input
+            type="file"
+            accept="image/*"
+            className={styles["file-input"]}
+            {...register("styleImg", { required: true })}
+          />
+        </div>
+        <button type="submit" className={styles["button"]}>
+          Add Style
+        </button>
+      </form>
+    </>
   );
 };
 

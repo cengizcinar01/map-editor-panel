@@ -1,0 +1,47 @@
+.form {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 150px;
+}
+
+.input.url {
+    width: 440px;
+}
+
+.file-input {
+    padding: 7px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #fff;
+    width: 250px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #323232;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #323232dc;
+}
