@@ -18,7 +18,9 @@ const SignIn = () => {
         <div className={styles["wrapper"]}>
           <img
             className={styles["logo"]}
-            src="https://api.litehost.cc/assets/7acc0aec-f06d-4f5a-9800-53069b9de146"
+            src={`${
+              import.meta.env.VITE_APP_ASSET_URL
+            }/map-editor-panel-logo.png`}
             alt="Map Editor Project Logo"
           />
           <span>Access denied</span>
