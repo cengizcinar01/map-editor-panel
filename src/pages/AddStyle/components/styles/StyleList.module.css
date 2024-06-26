@@ -1,0 +1,28 @@
+.style-list-container {
+    padding: 60px;
+    background-color: rgb(210, 210, 210);
+    margin: 30px;
+}
+
+.style-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.style-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #e7e7e7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.style-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.style-name {
+    padding: 12px;
+}

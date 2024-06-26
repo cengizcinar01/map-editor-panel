@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import styles from "./styles/StyleList.module.css";
 
 const StyleList = () => {
-  const [styles, setStyles] = useState([]);
+  const [getAllStyles, setGetAllStyles] = useState([]);
 
   useEffect(() => {
     const fetchStyles = async () => {
@@ -10,9 +11,9 @@ const StyleList = () => {
         const response = await axios.get(
           `${import.meta.env.VITE_APP_API_URL}/style/get-style`
         );
-        setStyles(response.data);
+        setGetAllStyles(response.data);
       } catch (error) {
-        console.error("Error fetching styles:", error);
+        console.error(error.message);
       }
     };
 
@@ -20,19 +21,22 @@ const StyleList = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Styles</h2>
-      {styles.map((style, index) => (
-        <div key={index}>
-          <h3>{style.style_name}</h3>
-          <img
-            src={`${import.meta.env.VITE_APP_ASSET_URL}/${style.style_img}`}
-            alt={style.style_name}
-          />
-          <p>URL: {style.style_url}</p>
+    <>
+      <div className={styles["style-list-container"]}>
+        <div className={styles["style-list"]}>
+          {getAllStyles.map((item, index) => (
+            <div key={index} className={styles["style-item"]}>
+              <img
+                src={`${import.meta.env.VITE_APP_ASSET_URL}/${item.style_img}`}
+                alt={item.style_name}
+                className={styles["style-image"]}
+              />
+              <div className={styles["style-name"]}>{item.style_name}</div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    </>
   );
 };
 
