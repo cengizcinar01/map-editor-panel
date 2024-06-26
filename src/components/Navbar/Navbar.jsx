@@ -17,7 +17,7 @@ const Navbar = () => {
         console.log(accessToken);
         try {
           const response = await axios.get(
-            `${import.meta.env.VITE_APP_API_URL}/auth/admin-auth-info`,
+            `${import.meta.env.VITE_APP_API_URL}/auth/auth-info`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
