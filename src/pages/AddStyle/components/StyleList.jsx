@@ -1,9 +1,9 @@
 import { useLogto } from "@logto/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import deleteStyleConfirmation from "./DeleteStyle/DeleteStyleConfirmation";
 import StyleItem from "./StyleItem";
 import styles from "./styles/StyleList.module.css";
-import deleteStyleConfirmation from "./DeleteStyle/DeleteStyleConfirmation";
 
 const StyleList = () => {
   const [getAllStyles, setGetAllStyles] = useState([]);
