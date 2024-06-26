@@ -7,31 +7,29 @@ const StyleForm = () => {
   const { getAccessToken, isAuthenticated } = useLogto();
 
   const onSubmit = async (data) => {
-    if (isAuthenticated) {
-      const accessToken = await getAccessToken(
-        `${import.meta.env.VITE_LOGTO_RESOURCES}`
-      );
+    if (!isAuthenticated) return;
 
+    try {
+      const accessToken = await getAccessToken(
+        import.meta.env.VITE_LOGTO_RESOURCES
+      );
       const formData = new FormData();
       formData.append("style_name", data.styleName);
       formData.append("style_url", data.styleUrl);
       formData.append("style_img", data.styleImg[0]);
 
-      try {
-        const response = await axios.post(
-          `${import.meta.env.VITE_APP_API_URL}/style/add-style`,
-          formData,
-          {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-            },
-          }
-        );
-        console.log("Style added successfully:", response.data);
-        reset();
-      } catch (error) {
-        console.error("Error adding style:", error);
-      }
+      await axios.post(
+        `${import.meta.env.VITE_APP_API_URL}/style/add-style`,
+        formData,
+        {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        }
+      );
+
+      console.log("Style added successfully");
+      reset();
+    } catch (error) {
+      console.error("Error adding style:", error);
     }
   };
 
