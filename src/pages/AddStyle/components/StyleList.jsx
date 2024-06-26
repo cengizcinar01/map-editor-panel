@@ -24,14 +24,16 @@ const StyleList = () => {
     <>
       <div className={styles["style-list-container"]}>
         <div className={styles["style-list"]}>
-          {getAllStyles.map((item, index) => (
+          {getAllStyles.map((styleItem, index) => (
             <div key={index} className={styles["style-item"]}>
               <img
-                src={`${import.meta.env.VITE_APP_ASSET_URL}/${item.style_img}`}
-                alt={item.style_name}
+                src={`${import.meta.env.VITE_APP_ASSET_URL}/${
+                  styleItem.style_img
+                }`}
+                alt={styleItem.style_name}
                 className={styles["style-image"]}
               />
-              <div className={styles["style-name"]}>{item.style_name}</div>
+              <div className={styles["style-name"]}>{styleItem.style_name}</div>
             </div>
           ))}
         </div>
