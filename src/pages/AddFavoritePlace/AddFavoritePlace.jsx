@@ -47,15 +47,13 @@ const AddFavoritePlace = () => {
   }
 
   return (
-    <div>
-      <h2>Add Favorite Place</h2>
+    <>
       <FavoritePlaceForm onAddPlace={handleAddPlace} />
-      <h2>Favorite Places</h2>
       <FavoritePlaceList
         places={favoritePlaces}
         onRemovePlace={handleRemovePlace}
       />
-    </div>
+    </>
   );
 };
 

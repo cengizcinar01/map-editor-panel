@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./styles/FavoritePlaceForm.module.css";
 
 const FavoritePlaceForm = ({ onAddPlace }) => {
   const [newPlace, setNewPlace] = useState({
@@ -26,9 +27,10 @@ const FavoritePlaceForm = ({ onAddPlace }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       {Object.entries(newPlace).map(([key, value]) => (
         <input
+          className={styles.input}
           key={key}
           type="text"
           name={key}
@@ -37,7 +39,9 @@ const FavoritePlaceForm = ({ onAddPlace }) => {
           onChange={handleInputChange}
         />
       ))}
-      <button type="submit">Add Place</button>
+      <button className={styles.button} type="submit">
+        Add Place
+      </button>
     </form>
   );
 };
