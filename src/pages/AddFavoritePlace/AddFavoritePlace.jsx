@@ -13,19 +13,20 @@ const AddFavoritePlace = () => {
   const [favoritePlaces, setFavoritePlaces] = useState([]);
 
   useEffect(() => {
-    const fetchPlaces = async () => {
-      const places = await fetchFavoritePlaces();
-      setFavoritePlaces(places);
-    };
     fetchPlaces();
   }, []);
+
+  const fetchPlaces = async () => {
+    const places = await fetchFavoritePlaces();
+    setFavoritePlaces(places);
+  };
 
   const handleAddPlace = async (newPlace) => {
     const accessToken = await getAccessToken(
       `${import.meta.env.VITE_LOGTO_RESOURCES}`
     );
-    const addedPlace = await addFavoritePlace(newPlace, accessToken);
-    setFavoritePlaces([...favoritePlaces, addedPlace]);
+    await addFavoritePlace(newPlace, accessToken);
+    fetchPlaces();
   };
 
   const handleRemovePlace = async (placeId) => {
@@ -37,7 +38,7 @@ const AddFavoritePlace = () => {
         `${import.meta.env.VITE_LOGTO_RESOURCES}`
       );
       await removeFavoritePlace(placeId, accessToken);
-      setFavoritePlaces(favoritePlaces.filter((place) => place.id !== placeId));
+      fetchPlaces();
     }
   };
 
