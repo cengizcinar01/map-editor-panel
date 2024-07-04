@@ -7,7 +7,7 @@ export const fetchFavoritePlaces = async () => {
     );
     return response.data;
   } catch (error) {
-    console.error("Error fetching favorite places:", error);
+    console.error(error.message);
     return [];
   }
 };
@@ -25,7 +25,7 @@ export const addFavoritePlace = async (newPlace, accessToken) => {
     );
     return response.data;
   } catch (error) {
-    console.error("Error adding favorite place:", error);
+    console.error(error.message);
     throw error;
   }
 };
@@ -43,7 +43,7 @@ export const removeFavoritePlace = async (placeId, accessToken) => {
       }
     );
   } catch (error) {
-    console.error("Error removing favorite place:", error);
+    console.error(error.message);
     throw error;
   }
 };
