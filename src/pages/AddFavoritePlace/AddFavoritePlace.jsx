@@ -14,23 +14,13 @@ const AddFavoritePlace = () => {
   });
 
   useEffect(() => {
-    if (isAuthenticated) {
-      fetchFavoritePlaces();
-    }
-  }, [isAuthenticated]);
+    fetchFavoritePlaces();
+  }, []);
 
   const fetchFavoritePlaces = async () => {
-    const accessToken = await getAccessToken(
-      `${import.meta.env.VITE_LOGTO_RESOURCES}`
-    );
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_APP_API_URL}/favorite/get-favorite-place`,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
+        `${import.meta.env.VITE_APP_API_URL}/favorite/get-favorite-place`
       );
       setFavoritePlaces(response.data);
     } catch (error) {
