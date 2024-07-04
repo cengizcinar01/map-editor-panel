@@ -15,9 +15,6 @@
     margin-right: 20px;
 }
 
-.input::placeholder {
-    color: #999;
-}
 
 .button {
     padding: 10px 20px;
