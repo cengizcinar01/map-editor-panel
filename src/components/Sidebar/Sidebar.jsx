@@ -7,6 +7,9 @@ const Sidebar = () => {
       <SidebarLink icon={MdDashboard} to="/">
         Dashboard
       </SidebarLink>
+      <SidebarLink icon={MdDesignServices} to="/add-favorite-place">
+        Add Favorite Place
+      </SidebarLink>
       <SidebarLink icon={MdDesignServices} to="/add-style">
         Add Style
       </SidebarLink>
