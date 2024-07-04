@@ -4,9 +4,9 @@ import {
   addFavoritePlace,
   fetchFavoritePlaces,
   removeFavoritePlace,
-} from "./api";
-import FavoritePlaceForm from "./FavoritePlaceForm";
-import FavoritePlaceList from "./FavoritePlaceList";
+} from "./api/favoritePlaceApi";
+import FavoritePlaceForm from "./components/FavoritePlaceForm";
+import FavoritePlaceList from "./components/FavoritePlaceList";
 
 const AddFavoritePlace = () => {
   const { getAccessToken, isAuthenticated } = useLogto();

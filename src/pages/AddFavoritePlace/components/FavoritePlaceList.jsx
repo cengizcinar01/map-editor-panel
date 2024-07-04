@@ -1,8 +1,8 @@
 const FavoritePlaceList = ({ places, onRemovePlace }) => {
   return (
     <ul>
-      {places.map((place) => (
-        <li key={place.id}>
+      {places.map((place, index) => (
+        <li key={index}>
           {place.name} - {place.country}
           <button onClick={() => onRemovePlace(place.id)}>Remove</button>
         </li>
