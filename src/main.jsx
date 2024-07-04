@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Callback from "./components/Auth/Callback";
 import ProtectedRoute from "./components/Auth/ProtectedRoute";
+import AddFavoritePlace from "./pages/AddFavoritePlace/AddFavoritePlace";
 import AddStyle from "./pages/AddStyle/AddStyle";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import "./styles/main.css";
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
     element: <ProtectedRoute />,
     children: [
       { index: true, element: <Dashboard /> },
+      { path: "add-favorite-place", element: <AddFavoritePlace /> },
       { path: "add-style", element: <AddStyle /> },
     ],
   },

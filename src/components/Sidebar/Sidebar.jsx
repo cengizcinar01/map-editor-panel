@@ -1,4 +1,4 @@
-import { MdDashboard, MdDesignServices } from "react-icons/md";
+import { MdDashboard, MdDesignServices, MdFavorite } from "react-icons/md";
 import SidebarLink from "./SidebarLink";
 
 const Sidebar = () => {
@@ -6,6 +6,9 @@ const Sidebar = () => {
     <>
       <SidebarLink icon={MdDashboard} to="/">
         Dashboard
+      </SidebarLink>
+      <SidebarLink icon={MdFavorite} to="/add-favorite-place">
+        Add Favorite Place
       </SidebarLink>
       <SidebarLink icon={MdDesignServices} to="/add-style">
         Add Style
