@@ -61,23 +61,30 @@ const AddFavoritePlace = () => {
   };
 
   const handleRemovePlace = async (placeId) => {
-    const accessToken = await getAccessToken(
-      `${import.meta.env.VITE_LOGTO_RESOURCES}`
+    const confirmDelete = window.confirm(
+      "Are you sure you want to remove this favorite place?"
     );
-    try {
-      await axios.delete(
-        `${
-          import.meta.env.VITE_APP_API_URL
-        }/favorite/delete-favorite-place/${placeId}`,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
+    if (confirmDelete) {
+      const accessToken = await getAccessToken(
+        `${import.meta.env.VITE_LOGTO_RESOURCES}`
       );
-      setFavoritePlaces(favoritePlaces.filter((place) => place.id !== placeId));
-    } catch (error) {
-      console.error("Error removing favorite place:", error);
+      try {
+        await axios.delete(
+          `${
+            import.meta.env.VITE_APP_API_URL
+          }/favorite/delete-favorite-place/${placeId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
+        );
+        setFavoritePlaces(
+          favoritePlaces.filter((place) => place.id !== placeId)
+        );
+      } catch (error) {
+        console.error("Error removing favorite place:", error);
+      }
     }
   };
 
