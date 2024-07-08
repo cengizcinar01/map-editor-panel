@@ -2,9 +2,9 @@ export const checkStatus = async (resources) => {
   const status = await Promise.all(
     resources.map(async ({ url }) => {
       try {
-        const proxyUrl = `http://localhost:5000/proxy?url=${encodeURIComponent(
-          url
-        )}`;
+        const proxyUrl = `${
+          import.meta.env.VITE_APP_API_URL
+        }/proxy?url=${encodeURIComponent(url)}`;
         const response = await fetch(proxyUrl);
         return response.ok ? "online" : "offline";
       } catch (error) {
@@ -12,6 +12,5 @@ export const checkStatus = async (resources) => {
       }
     })
   );
-
   return Object.fromEntries(resources.map(({ name }, i) => [name, status[i]]));
 };
