@@ -1,4 +1,5 @@
 import { useLogto } from "@logto/react";
+import mapEditorPanelLogo from "./assets/map-editor-panel-logo.png";
 import styles from "./styles/SignIn.module.css";
 
 const SignIn = () => {
@@ -18,10 +19,8 @@ const SignIn = () => {
         <div className={styles["wrapper"]}>
           <img
             className={styles["logo"]}
-            src={`${
-              import.meta.env.VITE_APP_ASSET_URL
-            }/map-editor-panel-logo.png`}
-            alt="Map Editor Project Logo"
+            src={mapEditorPanelLogo}
+            alt="Map Editor Panel Logo"
           />
           <span>Access denied</span>
           <button
